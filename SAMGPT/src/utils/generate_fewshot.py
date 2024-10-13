@@ -86,5 +86,5 @@ def save_fewshot_graph_data(dataset_name, num_shots=10, num_samples=100):
 if __name__ == '__main__':
     datasets =   ['Cora', 'Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
     for dataset_name in datasets:
-        #save_fewshot_data(dataset_name)
+        save_fewshot_data(dataset_name)
         save_fewshot_graph_data(dataset_name)
