@@ -26,7 +26,7 @@ Default dataset is Photo. You need to change the corresponding parameters in *ex
 Pretrain and Prompt tune:
 ```bash
 python ./src/execute.py 
-  --dataset {Name of the main dataset, default: Cora} 
+  --dataset {Name of the downstream dataset, default: Cora} 
   --pretrain_datasets {List of pretrain datasets, default: ['Wisconsin', 'Texas']} 
   --downstream_task {Type of downstream task, options: node or graph, default: node}
   --alpha {Combination weight parameter, default: 1.0} 
