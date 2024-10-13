@@ -25,14 +25,14 @@ Default dataset is Photo. You need to change the corresponding parameters in *ex
 
 Pretrain and Prompt tune:
 `python ./src/execute.py \
-  --dataset {Name of the main dataset, default: Cora} \
-  --pretrain_datasets {List of pretrain datasets, default: ['Wisconsin', 'Texas']} \
-  --downstream_task {Type of downstream task, options: node or graph, default: node} \
-  --alpha {Combination weight parameter, default: 1.0} \
-  --beta {Combination weight parameter, default: 1.0} \
-  --gpu {GPU device number, default: 0} \
-  --shot_num {Number of examples for few-shot learning, default: 1} \
-  --pretrain_method {Pretraining method, options: GRAPHCL, LP, or splitLP, default: GRAPHCL} \
-  --backbone {Type of backbone network, default: gcn}
+  --dataset {Name of the main dataset, default: Cora} \  
+  --pretrain_datasets {List of pretrain datasets, default: ['Wisconsin', 'Texas']} \  
+  --downstream_task {Type of downstream task, options: node or graph, default: node} \  
+  --alpha {Combination weight parameter, default: 1.0} \  
+  --beta {Combination weight parameter, default: 1.0} \  
+  --gpu {GPU device number, default: 0} \  
+  --shot_num {Number of examples for few-shot learning, default: 1} \  
+  --pretrain_method {Pretraining method, options: GRAPHCL, LP, or splitLP, default: GRAPHCL} \  
+  --backbone {Type of backbone network, default: gcn}  
 `
 
