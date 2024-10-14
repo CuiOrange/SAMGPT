@@ -27,7 +27,7 @@ Pretrain and Prompt tune:
 ```bash
 python ./src/execute.py 
   --dataset {Name of the downstream dataset, default: Cora} 
-  --pretrain_datasets {List of pretrain datasets, default: ['Wisconsin', 'Texas']} 
+  --pretrain_datasets {List of pretrain datasets, default: ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']} 
   --downstream_task {Type of downstream task, options: node or graph, default: node}
   --alpha {Combination weight parameter, default: 1.0} 
   --beta {Combination weight parameter, default: 1.0} 
