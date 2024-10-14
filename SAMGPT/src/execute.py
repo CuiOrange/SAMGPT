@@ -25,7 +25,7 @@ parser.add_argument('--dataset', type=str, default="Cora", help='data')
 parser.add_argument('--pretrain_datasets', nargs='+', type=str, 
     help='pretrain datasets', default=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'])
 parser.add_argument('--downstream_task', type=str, default='node', help='node or graph')
-parser.add_argument('--gpu', type=int, default=1, help='gpu')
+parser.add_argument('--gpu', type=int, default=0, help='gpu')
 parser.add_argument('--pretrain_method', type=str, default="GRAPHCL", help='GRAPHCL or LP or splitLP')
 parser.add_argument('--aug_type', type=str, default="edge", help='aug type: mask or edge')
 parser.add_argument('--drop_percent', type=float, default=0.1, help='drop percent')
