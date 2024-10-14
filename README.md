@@ -21,9 +21,9 @@ The repository is organised as follows:
 To download the datasets and generate fewshot data, run `python ./src/utils/generate_fewshot.py`
 
 ### Node Classification and Graph Classification
-To train and evaluate, you may need to change the corresponding parameters in *execute.py*.
+To train and evaluate SAMGPT on various target domains, you may need to change the corresponding parameters in *execute.py*.
 
-Pretrain and Prompt tune:
+Pre-training and prompt tuning:
 ```bash
 python ./src/execute.py 
   --dataset {Name of the downstream dataset, default: Cora} 
