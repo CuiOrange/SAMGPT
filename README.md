@@ -1,4 +1,4 @@
-# SAMDGPT
+# SAMGPT
 ## Description
 
 The repository is organised as follows:
@@ -21,7 +21,7 @@ The repository is organised as follows:
 To download the datasets and generate fewshot data, run `python ./src/utils/generate_fewshot.py`
 
 ### Node Classification and Graph Classification
-You may need to change the corresponding parameters in *execute.py* to train and evaluate on other datasets.
+To train and evaluate, you may need to change the corresponding parameters in *execute.py*.
 
 Pretrain and Prompt tune:
 ```bash
