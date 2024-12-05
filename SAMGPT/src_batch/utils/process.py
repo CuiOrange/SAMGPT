@@ -49,7 +49,6 @@ def sp_adj(adj,node1,node2):
             begin = i
             break
 
-#寻找当前节点的邻居节点和二阶邻居节点
 def find_2hop_neighbors(adj, node):
     neighbors = []
     # print(type(adj))
@@ -96,21 +95,20 @@ def build_subgraph(adj, idx_train, sparse = True):
 
 def plotlabels(feature, Trure_labels, name):
  # maker = ['o', 's', '^', 's', 'p', '*', '<', '>', 'D', 'd', 'h', 'H']
-    # 设置散点颜色
 
     S_lowDWeights = visual(feature)
     colors = ['#e38c7a', '#656667', '#99a4bc', 'cyan', 'blue', 'lime', 'r', 'violet', 'm', 'peru', 'olivedrab','hotpink']
     True_labels = Trure_labels.reshape((-1, 1))
-    S_data = np.hstack((S_lowDWeights, True_labels)) # 将降维后的特征与相应的标签拼接在一起
+    S_data = np.hstack((S_lowDWeights, True_labels)) 
     S_data = pd.DataFrame({'x': S_data[:, 0], 'y': S_data[:, 1], 'label': S_data[:, 2]})
     print(S_data)
     print(S_data.shape) # [num, 3]
-    for index in range(4): # 假设总共有三个类别，类别的表示为0,1,2
+    for index in range(4):
         X = S_data.loc[S_data['label'] == index]['x']
         Y = S_data.loc[S_data['label'] == index]['y']
         plt.scatter(X, Y, cmap='brg', s=20, marker='.', c=colors[index], edgecolors=colors[index])
-        plt.xticks([]) # 去掉横坐标值
-        plt.yticks([]) # 去掉纵坐标值
+        plt.xticks([])
+        plt.yticks([])
     plt.title(name, fontsize=32, fontweight='normal', pad=20)
     
     plt.savefig('plt_graph/exceptcomputers/{}.png'.format(name),dpi=500)
@@ -118,7 +116,6 @@ def plotlabels(feature, Trure_labels, name):
     plt.clf()
 
 def visual(feat):
-    # t-SNE的最终结果的降维与可视化
     ts = manifold.TSNE(n_components=2, init='pca', random_state=0)
     x_ts = ts.fit_transform(feat)
     print(x_ts.shape) # [num, 2]
@@ -161,20 +158,17 @@ def combine_dataset_list(args):
     return adj
 
 def combine_dataset_list_sp(args):
-    # 初始化一个空的块对角稀疏矩阵
     adj1 = None
     
     for step, adj in enumerate(args):
         if step == 0:
-            adj1 = adj  # 第一个矩阵直接赋值给adj1
+            adj1 = adj
         else:
-            # 构建零矩阵
             num_rows1, num_cols1 = adj1.shape
             num_rows2, num_cols2 = adj.shape
-            zeroadj1 = sp.csr_matrix((num_rows1, num_cols2))  # adj1右侧的零矩阵
-            zeroadj2 = sp.csr_matrix((num_rows2, num_cols1))  # adj1下方的零矩阵
+            zeroadj1 = sp.csr_matrix((num_rows1, num_cols2))
+            zeroadj2 = sp.csr_matrix((num_rows2, num_cols1))
             
-            # 拼接矩阵
             top = sp.hstack([adj1, zeroadj1])
             bottom = sp.hstack([zeroadj2, adj])
             adj1 = sp.vstack([top, bottom])
