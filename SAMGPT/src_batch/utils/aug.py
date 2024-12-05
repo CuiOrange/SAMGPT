@@ -29,12 +29,6 @@ def aug_random_edge(input_adj, drop_percent=0.2):
     for i in range(len(row_idx)):
         index_list.append((row_idx[i], col_idx[i]))
 
-    #single_index_list = []
-    #for i in list(index_list):
-    #    single_index_list.append(i)
-    #    index_list.remove((i[1], i[0]))
-    
-    # 使用集合来跟踪已处理的边
     processed_edges = set()
     single_index_list = []
     for i in index_list:
