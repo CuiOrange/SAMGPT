@@ -75,7 +75,7 @@ def analyze_dataset(name, graph = False):
     data_ = load_dataset(name)
     #print(len(data_))
     data = data_[0]
-    deg = degree(data.edge_index[0], data.num_nodes)  # 计算度数
+    deg = degree(data.edge_index[0], data.num_nodes)
     average_degree = deg.mean().item()
     print(f'\n{name}: avg_degree:{average_degree:.4f}, num_nodes:{data.num_nodes}, num_edges:{data.num_edges}, num_classes:{data_.num_classes}, num_features:{data_.num_features}')
     G = to_networkx(data, to_undirected=True)
@@ -115,7 +115,7 @@ def analyze_dataset_multi(name, graph = False):
     #print(len(data_))
     for i, data in enumerate(data_):
         #data = data_[0]
-        deg = degree(data.edge_index[0], data.num_nodes)  # 计算度数
+        deg = degree(data.edge_index[0], data.num_nodes)
         average_degree = deg.mean().item()
         print(f'{name}_{i+1}: avg_degree:{average_degree:.4f}, num_nodes:{data.num_nodes}, num_edges:{data.num_edges}, num_classes:{data_.num_classes}, num_features:{data_.num_features}')
         if graph:
