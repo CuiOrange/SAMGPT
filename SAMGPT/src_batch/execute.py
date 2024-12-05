@@ -65,10 +65,9 @@ for strs in pretrain_dataset_names:
 print('gpu:', str(args.gpu))
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 torch.cuda.set_device(args.gpu)
-# 检查可用的 CUDA 设备
 print("CUDA Available:", torch.cuda.is_available())
 print("CUDA Device Count:", torch.cuda.device_count())
-print("Current Device:", torch.cuda.current_device())  # 应该返回 0，因为只允许访问第一个 GPU
+print("Current Device:", torch.cuda.current_device())
 
 seed = args.seed
 random.seed(seed)
