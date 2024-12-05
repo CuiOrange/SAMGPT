@@ -22,7 +22,7 @@ def generate_fewshot_samples(labels, num_shots, num_samples):
         for label in unique_labels:
             label_indices = (labels == label).nonzero(as_tuple=True)[0]
             if len(label_indices) < num_shots:
-                continue  # 如果该标签的节点数不足，跳过
+                continue
             selected_indices = random.sample(label_indices.tolist(), num_shots)
             samples.extend(selected_indices)
         fewshot_samples.append({
