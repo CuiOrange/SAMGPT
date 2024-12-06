@@ -34,6 +34,6 @@ python ./src/execute.py
   --pretrain_method {Pretraining method, options: GRAPHCL, LP, or splitLP, default: GRAPHCL}  
 ```
 
-##Mini-batch implementation##
+## Mini-batch implementation ##
 
 An example for mini-batch implementation is shown in ./src_batch. 
