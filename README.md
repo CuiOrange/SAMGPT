@@ -1,4 +1,7 @@
 # SAMGPT
+We provide the code (in pytorch) and datasets for our paper [**"SAMGPT: Text-free Graph Foundation Model for Multi-domain Pre-training and Cross-domain Adaptation"**](https://arxiv.org/abs/2502.05424), 
+which is accepted by WWW2025.
+
 ## Description
 
 The repository is organised as follows:
